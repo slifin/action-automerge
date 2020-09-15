@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mtanzi/action-automerge.git"
+    "url": "git+https://github.com/slifin/action-automerge.git"
   },
   "keywords": [
     "actions",
@@ -20,10 +20,6 @@
   ],
   "author": "Marco Tanzi",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/actions/hello-world-javascript-action/issues"
-  },
-  "homepage": "https://github.com/actions/hello-world-javascript-action#readme",
   "dependencies": {
     "@actions/core": "^1.2.4",
     "@actions/github": "^1.1.0",

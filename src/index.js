@@ -55,12 +55,21 @@ async function slackMessage(source, target, status) {
 async function merge(source, target) {
   core.info(`merge branch:${source} to: ${target}`)
 
+  const today = new Date();
+  const month = today.toLocaleString('en-GB', { month: 'long' }).toLowerCase();
+  const year = today.toLocaleString('en-GB', { year: 'numeric' });
+
+  const updated_target =
+    target === 'automatic'
+    ? `${month}-release-${year}`
+    : target;
+
   const response = await octokit.repos.merge({
     owner: repo.owner,
     repo: repo.repo,
-    base: target,
+    base: updated_target,
     head: source,
-    commit_message: `Merged '${source}' into '${target}'.`
+    commit_message: `Back merge of code from master`
   })
 }
 
