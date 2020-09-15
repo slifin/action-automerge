@@ -74268,7 +74268,7 @@ async function merge(source, target) {
   const response = await octokit.repos.merge({
     owner: repo.owner,
     repo: repo.repo,
-    base: updated_target,
+    base: target,
     head: source,
     commit_message: `Back merge of code from master`
   })
