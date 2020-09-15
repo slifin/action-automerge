@@ -74276,16 +74276,16 @@ async function merge(source, target) {
 
 async function run() {
   const source = core.getInput('source');
-  const target = core.getInput('target');
+  const input = core.getInput('target');
 
   const today = new Date();
   const month = today.toLocaleString('en-GB', { month: 'long' }).toLowerCase();
   const year = today.toLocaleString('en-GB', { year: 'numeric' });
 
-  const updated_target = (
-    target === 'automatic'
+  const target = (
+    input === 'automatic'
       ? `${month}-release-${year}`
-      : target
+      : input
   );
 
   core.info(`merge ${source} into ${target}`);
